@@ -1,0 +1,129 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+.hero img{
+    margin-top: 50px;
+    width: 250px;
+    border-radius: 700px;
+    left: 100px;
+}
+ .hero h1{
+    text-align: center;
+    width: 70%;
+    font-size: 90px;
+    font-weight: 600;
+ }
+ .hero h2 span{
+    color: #8d7ff4;
+    background: linear-gradient(267deg, #7929bb, #5078b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero h3{
+    font-size: 26px;
+    color: #b9c8d3;
+    font-weight: 400;
+    text-align: center;
+    width: 70%;
+}
+.hero-action{
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-bottom: 50px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.hero-connect{
+    padding: 20px 40px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #3c0867, #274980);
+    font-size: 22px;
+    color: #b9c8d3;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.hero-resume{
+    padding: 20px 40px;
+    border-radius: 50px;
+     background: linear-gradient(267deg, #cebdda, #8ba9da);      font-size: 22px;
+    color: #042f4d;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.hero-connect:hover{
+    transform: scale(1.05);
+    border-color: aliceblue;
+    color: #fdfdfd;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.hero-resume:hover{
+    border-color: #7929bb;
+    transform: scale(1.05);
+    color: #042f4d;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+.hero p2{
+    font-size: 20px;
+    color: #b9c8d3;
+    font-weight: 400;
+    text-align: center;
+    width: 70%;
+    margin-top: 20px;
+}
+.hero p1{
+    font-size: 26px;
+    color: #b9c8d3;
+    font-weight: 400;
+    text-align: center;
+    width: 70%;
+}
+@keyframes hero{
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 768px) {
+    .hero h1{
+        font-size: 50px;
+    }
+    .hero h2{
+        font-size: 30px;
+    }
+    .hero h3{
+        font-size: 20px;
+    }
+    .hero-action{
+        flex-direction: column;
+        gap: 20px;
+  
+    }
+    .hero-image img{
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+    }
+    .hero img{
+        width: 200px;
+        height: 200px;
+        border-radius: 500px;}
+    .hero p{
+        font-size: 16px;
+    }
+    .hero p1{
+        font-size: 20px;
+    }
+}
