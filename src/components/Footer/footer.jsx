@@ -1,39 +1,39 @@
 import React from 'react'
 import './footer.css'
-const footer = () => {
+
+const Footer = () => {
   return (
     <div className='footer'>
       <div className="footer-top">
         <div className="footer-top-left">
-             <p>Interested in learning more? We'd love to hear from you.We welcome your inquiries and feedback.<br /> Please share:
-             <ul>
-              <li>Your name</li>
-              <li>Email address</li>
-              <li>Any questions or suggestions you may have</li>
- </ul><br />
-Thank you for your interest.<br />We look forward to hearing from you.</p>
-            </div>
-            <div className="footer-top-right">
-                <div className="footer-email-input">
-                    <input type="email" placeholder='Enter your email' />
-                </div>
-                <div >
-                   <button className='footer-email-button'>Contact</button>
-                </div>
-                    <div className="footer-bottom">
-                        <div className="footer-bottom-left">
-                <p>© 2025 Aman Nuhad. All rights reserved.</p>
-                <div className="footer-bottom-right">
-                    <p>Term of Services</p>
-                    <p>Privacy Policy</p>
-                    <p>Contact with Me</p>
-                </div>
-                        </div>
-                    </div>
-            </div>
+          <h3 className="footer-title">Get In Touch</h3>
+          <p className="footer-description">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect and explore how we can work together.
+          </p>
+          <p className="footer-subtitle">What to include:</p>
+          <ul className="footer-list">
+            <li>Your name and company</li>
+            <li>Email address</li>
+            <li>Project details or inquiry</li>
+          </ul>
+          <p className="footer-thanks">
+            I'll respond promptly to discuss how we can bring your ideas to life.
+          </p>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <div className="footer-bottom-left">
+          <p>© 2025 Aman Nuhad. All rights reserved.</p>
+        </div>
+        <div className="footer-bottom-right">
+          <a href="#terms" className="footer-link">Terms of Services</a>
+          <a href="#privacy" className="footer-link">Privacy Policy</a>
+          <a href="#contact" className="footer-link">Contact with Me</a>
+        </div>
       </div>
     </div>
   )
 }
 
-export default footer
+export default Footer

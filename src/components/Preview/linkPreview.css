@@ -1,0 +1,97 @@
+.lp-container {
+  position: relative;
+  display: inline-block;
+}
+
+.lp-popover {
+  position: fixed;
+  transform: translate(-50%, 12px);
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4);
+  border-radius: 12px;
+  padding: 10px;
+  width: 280px;
+  z-index: 1000;
+  color: #e2e8f0;
+  backdrop-filter: saturate(140%) blur(16px);
+  -webkit-backdrop-filter: saturate(140%) blur(16px);
+}
+
+.lp-thumb {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: rgba(15, 23, 42, 0.45);
+  position: relative;
+}
+.lp-thumb-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.1) 25%, rgba(148, 163, 184, 0.2) 50%, rgba(148, 163, 184, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.lp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: saturate(140%) blur(16px);
+  -webkit-backdrop-filter: saturate(140%) blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  transition: opacity 0.3s ease-in-out;
+}
+.lp-img-loading {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.lp-img-loaded {
+  opacity: 1;
+  position: relative;
+}
+
+.lp-content {
+  display: grid;
+  gap: 4px;
+}
+.lp-title {
+  font-weight: 600;
+  color: #f8fafc;
+}
+.lp-desc {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.lp-arrow {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: saturate(140%) blur(16px);
+  -webkit-backdrop-filter: saturate(140%) blur(16px);
+  border-left: 1px solid rgba(148, 163, 184, 0.2);
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+@media (max-width: 768px) {
+  .lp-popover { display: none; }
+}
+
+
