@@ -87,9 +87,9 @@ const Loader = ({ onDone }) => {
           initial={{ opacity: 0, y: 8 }}
           animate={phase === 'intro' ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
           transition={{ duration: phase === 'intro' ? 0.6 : 0.6, ease: [0.65, 0, 0.35, 1] }}
-          style={{ color: '#b9c8d3', fontSize: 20, fontWeight: 600, letterSpacing: 0.5 }}
+          style={{ color: '#b9c8d3', fontSize: 20, fontWeight: 600, letterSpacing: 0.5, marginTop: 35 }}
         >
-          loading{' '}
+          Loading{' '}
           <span
             style={{
               background: 'linear-gradient(135deg, #7929bb, #5078b8)',
