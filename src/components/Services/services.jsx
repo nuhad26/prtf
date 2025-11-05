@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './services.css';
 const Services = () => {
   const services = [
@@ -32,35 +32,90 @@ const Services = () => {
     },
     {
       id: 5,
-      icon: "🚀",
+      icon: "📚",
       title: "Learning & Collaboration",
       description: "Eager to learn new technologies and contribute to team projects. Bringing fresh perspectives and enthusiasm to development challenges.",
       skills: ["Team Work", "Quick Learning", "Adaptability", "Problem Solving"]
     },
     {
-  id: 6,
-  icon: "🔍",
-  title: "Quality Assurance & Testing",
-  description: "Ensuring software reliability through comprehensive testing strategies. Implementing automated testing frameworks and maintaining high code quality standards.",
-  skills: ["Test Automation", "Bug Tracking", "Quality Control", "Test Planning"]
-}
+      id: 6,
+      icon: "🧩",
+      title: "Backend & API Development",
+      description: "Designing and building secure, scalable APIs and backend services with Node.js and Express. Integrating databases, authentication, and best practices for performance and reliability.",
+      skills: ["Node.js", "Nest.js", "REST APIs", "MySQL"]
+    }
   ];
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const cards = containerRef.current?.querySelectorAll('.service-card');
+    if (!cards || cards.length === 0) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      cards.forEach((card) => card.classList.add('visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach((card, index) => {
+      card.style.setProperty('--reveal-delay', `${index * 60}ms`);
+      observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleMouseMove = (e) => {
+    const target = e.currentTarget;
+    const rect = target.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    target.style.setProperty('--mx', `${x}px`);
+    target.style.setProperty('--my', `${y}px`);
+  };
+
+  const handleMouseLeave = (e) => {
+    const target = e.currentTarget;
+    target.style.removeProperty('--mx');
+    target.style.removeProperty('--my');
+  };
+
   return (
-    <div id="services" className="services">
+    <div id="services" className="services" aria-labelledby="services-title">
       <div className="services-title">
-        <h2>My Services</h2>
+        <h2 id="services-title">My Services</h2>
         <p>What I can offer as a growing developer</p>
       </div>
-      <div className="service-container">
+      <div ref={containerRef} className="service-container" role="list">
         {services.map((service) => (
-          <div key={service.id} className="service-card">
-            <div className="service-icon">
+          <div
+            key={service.id}
+            className="service-card reveal"
+            role="listitem"
+            aria-label={service.title}
+            tabIndex={0}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="service-icon" aria-hidden="true">
               {service.icon}
             </div>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
-            <div className="service-skills">
+            <div className="service-skills" aria-label={`${service.title} skills`}>
               {service.skills.map((skill, index) => (
                 <span key={index} className="skill-tag">
                   {skill}
