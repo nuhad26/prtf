@@ -10,7 +10,7 @@ import contactPreview from '../../../prtf/public/contact.jpg'
 import servicesPreview from '../../../prtf/public/services.jpg'
 import featuresPreview from '../../../prtf/public/features.jpg'
 import homePreview from '../../../prtf/public/homee.avif'
-import experiencePreview from '../../../prtf/public/services.jpg'
+import experiencePreview from '../../../prtf/public/experience.avif'
 
 const Navbar = () => {
   const [menu, setMenu] = React.useState("home");
