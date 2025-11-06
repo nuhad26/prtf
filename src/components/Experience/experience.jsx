@@ -10,32 +10,32 @@ const Experience = () => {
       title: 'Full Stack Developer at BairuhaTech(Intern)',
       period: '2025 — Present',
       description:
-        'Building full‑stack web apps with React, Next.js and Nest.js. Focus on performant UI, clean APIs, and accessible UX.',
+        'Worked on full‑stack web apps with React, Next.js and Nest.js. Focus on performant UI, clean APIs, and accessible UX.',
       tags: ['React', 'Next.js', 'Nest.js', 'TypeScript', 'MySQL'],
     },
     {
       id: 2,
-      title: 'Open Source & Personal Projects',
-      period: 'Ongoing',
+      title: 'AI-Based Attendance Monitoring System',
+      period: 'College Project',
       description:
-        'Prototyping ideas, contributing to community repos, and exploring modern tooling to sharpen skills.',
-      tags: ['Vite', 'Framer Motion', 'Accessibility', 'Testing'],
+        'College project where I built an AI-based class attendance monitoring system using Python, HTML, and CSS.',
+      tags: ['Python', 'HTML', 'CSS', 'Computer Vision'],
     },
   ]
 
   const projects = [
-    {
-      id: 1,
-      name: 'Portfolio Website',
-      summary:
-        'A performant, responsive portfolio built with React and modern animations. Focus on scroll‑based interactions and accessibility.',
-      tags: ['React', 'Motion', 'Vite'],
-    },
+    // {
+    //   id: 1,
+    //   name: 'Portfolio Website',
+    //   summary:
+    //     'A performant, responsive portfolio built with React and modern animations. Focus on scroll‑based interactions and accessibility.',
+    //   tags: ['React', 'Motion', 'Vite'],
+    // },
     {
       id: 2,
       name: 'Employee Management System',
       summary:
-        'A Employee Management System built with React(Next.js) and Nest.js. It allows you to manage your employees, tasks and its time tracking system.',
+        'Built an Employee Management System with React(Next.js) and Nest.js. It allows you to manage your employees, tasks and its time tracking system.',
       tags: ['React', 'Next.js', 'Nest.js', 'MySQL'],
     },
     {
