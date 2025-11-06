@@ -9,7 +9,7 @@ import aboutPreview from '../../../prtf/public/about-me.jpg'
 import contactPreview from '../../../prtf/public/contact.jpg'
 import servicesPreview from '../../../prtf/public/services.jpg'
 import featuresPreview from '../../../prtf/public/features.jpg'
-import homePreview from '../../../prtf/public/homee.avif'
+import homePreview from '../../../prtf/public/home.png'
 import experiencePreview from '../../../prtf/public/experience.avif'
 
 const Navbar = () => {
@@ -77,9 +77,9 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <ul className='nav-menu-desktop'>
         <li className={menu === 'home' ? 'active' : ''}>
-          <LinkPreview href='#home' title='Hero' description='Intro and quick overview' image={homePreview}>
+          <AnchorLink className='anchor-link' offset={50} href='#home'>
             <p onClick={()=>setMenu("home")}>Home</p>
-          </LinkPreview>
+          </AnchorLink>
         </li>
         <li className={menu === 'about' ? 'active' : ''}>
           <LinkPreview href='#about' title='About Me' description='Background, skills and story' image={aboutPreview}>
