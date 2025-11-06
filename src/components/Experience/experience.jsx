@@ -7,8 +7,8 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Full Stack Developer (Freelance)',
-      period: '2023 — Present',
+      title: 'Full Stack Developer at BairuhaTech(Intern)',
+      period: '2025 — Present',
       description:
         'Building full‑stack web apps with React, Next.js and Nest.js. Focus on performant UI, clean APIs, and accessible UX.',
       tags: ['React', 'Next.js', 'Nest.js', 'TypeScript', 'MySQL'],
@@ -33,10 +33,17 @@ const Experience = () => {
     },
     {
       id: 2,
-      name: 'API‑Driven Dashboard',
+      name: 'Employee Management System',
       summary:
-        'A dashboard consuming REST APIs with charts, filters, and CRUD workflows, emphasizing DX and clean architecture.',
-      tags: ['Next.js', 'Nest.js', 'REST'],
+        'A Employee Management System built with React(Next.js) and Nest.js. It allows you to manage your employees, tasks and its time tracking system.',
+      tags: ['React', 'Next.js', 'Nest.js', 'MySQL'],
+    },
+    {
+      id: 3,
+      name: 'Projects i have worked on',
+      summary:
+        'A list of projects i have worked on. It includes my personal projects and projects i have worked on for the company that includes LMS, ERP, CRM, etc.',
+      tags: ['React', 'Next.js', 'Nest.js', 'MySQL', 'Tailwind CSS', 'TypeScript'],
     },
   ]
 
@@ -59,7 +66,7 @@ const Experience = () => {
           }
         })
       },
-      { threshold: 0.15 }
+      { threshold: 0.05 }
     )
 
     cards.forEach((card, index) => {
