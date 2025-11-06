@@ -70,7 +70,7 @@ const contact = () => {
           setSubmitMessage('');
         }, 5000);
       } else {
-        setSubmitMessage("Failed to send message. Please try again.");
+        setSubmitMessage("This Functionality is not available yet. Would Resolve Soon.");
         setTimeout(() => {
           setSubmitMessage('');
         }, 5000);

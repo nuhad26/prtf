@@ -51,14 +51,14 @@ const Hero = () => {
           </p>
         </div> */}
         <div className="hero-action">
-            <div className='hero-connect'>
+            {/* <div className='hero-connect'>
               <LinkPreview href='#contact' title='Contact' description='Say hello or request a quote' image={previewImg}>
                 <span>Connect with me</span>
               </LinkPreview>
-            </div>
+            </div> */}
             <div className='hero-resume'>
-              <LinkPreview href='#about' title='About Me' description='Experience and skills snapshot' image={previewImg}>
-                <span>My Resume</span>
+              <LinkPreview href='#contact' title='Contact' description='Experience and skills snapshot' image={previewImg}>
+                <span>Get in touch</span>
               </LinkPreview>
             </div>
         </div>
