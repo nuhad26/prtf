@@ -5,7 +5,7 @@ import nestLogo from '../../../prtf/public/nest-logo.svg'
 import pythonLogo from '../../../prtf/public/python-logo.png'
 import reactLogo from '../../../prtf/public/logo.svg'
 import jsLogo from '../../../prtf/public/js-logo.png'
-import htmlLogo from '../../../prtf/public/html-logo.jpg'
+// import htmlLogo from '../../../prtf/public/html-logo.jpg'
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false)
