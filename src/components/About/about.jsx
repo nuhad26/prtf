@@ -4,6 +4,8 @@ import './about.css'
 import nestLogo from '../../../prtf/public/nest-logo.svg'
 import pythonLogo from '../../../prtf/public/python-logo.png'
 import reactLogo from '../../../prtf/public/logo.svg'
+import jsLogo from '../../../prtf/public/js-logo.png'
+// import htmlLogo from '../../../prtf/public/html-logo.jpg'
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -47,7 +49,8 @@ const About = () => {
     { 
       name: 'JavaScript & TypeScript', 
       percentage: 70,
-      icon: '⚡',
+      icon: jsLogo,
+      iconType: 'image',
       tagline: 'Making web magic happen ✨',
       color: '#3178c6'
     },
