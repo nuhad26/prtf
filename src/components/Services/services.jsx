@@ -32,17 +32,17 @@ const Services = () => {
     },
     {
       id: 5,
-      icon: "📚",
-      title: "Learning & Collaboration",
-      description: "Eager to learn new technologies and contribute to team projects. Bringing fresh perspectives and enthusiasm to development challenges.",
-      skills: ["Team Work", "Quick Learning", "Adaptability", "Problem Solving"]
-    },
-    {
-      id: 6,
       icon: "🧩",
       title: "Backend & API Development",
       description: "Designing and building secure, scalable APIs and backend services with Node.js and Express. Integrating databases, authentication, and best practices for performance and reliability.",
       skills: ["Node.js", "Nest.js", "REST APIs", "MySQL"]
+    },
+    {
+      id: 6,
+      icon: "📚",
+      title: "Learning & Collaboration",
+      description: "Eager to learn new technologies and contribute to team projects. Bringing fresh perspectives and enthusiasm to development challenges.",
+      skills: ["Team Work", "Quick Learning", "Adaptability", "Problem Solving"]
     }
   ];
 

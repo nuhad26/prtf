@@ -221,7 +221,7 @@ const itemVariants = {
   },
 }
 
-const colors = ["#7929bb", "#5078b8", "#3c0867", "#764ba2", "#274980", "#2e7d6b"]
+const colors = ["#64ffda", "#52e6c7", "#45d7b8", "#3bc8aa", "#32b195", "#2a9c84"]
 
 const MenuItem = ({ i, href, label, menuItem, handleMenuClick, isActive }) => {
   return (
@@ -240,7 +240,7 @@ const MenuItem = ({ i, href, label, menuItem, handleMenuClick, isActive }) => {
         role="menuitem"
         aria-current={isActive ? 'page' : undefined}
       >
-        <span style={{ color: isActive ? colors[i] : '#b9c8d3' }}>{label}</span>
+        <span style={{ color: isActive ? colors[i] : 'var(--color-text-secondary)' }}>{label}</span>
       </AnchorLink>
     </motion.li>
   )
@@ -273,7 +273,7 @@ const Path = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="#b9c8d3"
+    stroke="var(--color-text-primary)"
     strokeLinecap="round"
     {...props}
   />
