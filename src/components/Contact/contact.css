@@ -248,40 +248,9 @@
     word-wrap: normal;
 }
 
-.contact-detail:hover {
-    background: rgba(100, 255, 218, 0.15);
-    transform: translateX(10px) translateZ(0);
-    transform-origin: left center;
-    min-width: calc(100% + 120px);
-    padding: 18px 120px 18px 20px;
-    box-shadow: 0 3px 10px rgba(100, 255, 218, 0.2);
-    z-index: 10;
-}
-
-@media (max-width: 768px) {
-    .contact-detail:hover {
-        min-width: calc(100% + 80px);
-        padding: 18px 80px 18px 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-detail:hover {
-        min-width: calc(100% + 60px);
-        padding: 18px 60px 18px 15px;
-    }
-}
-
-.contact-detail:hover .contact-icon-wrapper {
-    background: rgba(100, 255, 218, 0.25);
-    transform: scale(1.1) rotate(5deg) translateZ(0);
-    box-shadow: 0 3px 8px rgba(100, 255, 218, 0.25);
-    transition-delay: 0.05s;
-}
-
-.contact-detail:hover img {
-    transform: scale(1.1) translateZ(0);
-    transition-delay: 0.05s;
+.contact-detail:active {
+    transform: translateX(8px) scale(0.98) translateZ(0);
+    transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .copy-hint {
@@ -290,19 +259,8 @@
     font-size: 14px;
     color: var(--color-accent);
     font-weight: 600;
-    opacity: 0;
-    transform: translateX(-10px) translateZ(0);
-    transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     pointer-events: none;
     white-space: nowrap;
-    will-change: opacity, transform;
-}
-
-.contact-detail:hover .copy-hint {
-    opacity: 1;
-    transform: translateX(0) translateZ(0);
-    transition-delay: 0.1s;
 }
 
 .copied-feedback {

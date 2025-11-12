@@ -109,7 +109,7 @@ const contact = () => {
                     'amannuhadpv@gmail.com'
                   )}
                 </p>
-                <span className="copy-hint">Click to copy</span>
+                {/* <span className="copy-hint">Click to copy</span> */}
               </div>
               <div 
                 className="contact-detail contact-detail-phone" 
@@ -126,7 +126,7 @@ const contact = () => {
                     '+91-9388111107'
                   )}
                 </p>
-                <span className="copy-hint">Click to copy</span>
+                {/* <span className="copy-hint">Click to copy</span> */}
               </div>
               <div className="contact-detail contact-detail-no-copy">
                 <div className="contact-icon-wrapper">
