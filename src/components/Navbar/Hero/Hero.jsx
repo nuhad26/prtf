@@ -35,13 +35,13 @@ const Hero = () => {
           <img src={profile} alt="Profile" className='hero-image'/>
         </div>
         <h2 className="hero-title">
-       <br/> I'm <span className="gradient-text">Aman Nuhad,<br/></span>
-          a Full Stack Web Developer.
+       <br/> I'm <span className="gradient-text">Aman Nuhad,</span>
+         <br/>A Full Stack Developer.
         </h2>
         <h3 className="hero-subtitle">
           A passionate Full Stack Developer from Calicut, Kerala, India, dedicated to crafting exceptional digital experiences.
            I specialize in<u className="highlight-text"> React, JavaScript, TypeScript, Node.js, and Next.js </u>
-              to build modern, scalable applications that deliver exceptional value.
+          to build modern, scalable applications that deliver exceptional value.
           
         </h3>
         {/* <div className="hero-description">
