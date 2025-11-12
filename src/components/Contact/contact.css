@@ -63,6 +63,23 @@
     animation: fadeIn 0.8s ease-out 0.2s both;
 }
 
+.contact-note {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px auto 0;
+    padding: 10px 18px;
+    max-width: 360px;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #fca5a5;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    box-shadow: 0 4px 18px rgba(239, 68, 68, 0.25);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

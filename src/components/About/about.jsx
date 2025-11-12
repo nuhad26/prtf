@@ -161,9 +161,14 @@ const About = () => {
         <div className={`about-right ${isVisible ? 'fade-in-right' : ''}`}>
           <div className="about-para">
             <p>
-              A passionate Full Stack Developer based in Calicut, Kerala, specializing in modern web technologies including React.js, JavaScript/TypeScript, Node.js, and a comprehensive suite of cutting-edge libraries and frameworks. I thrive on transforming complex challenges into elegant, scalable solutions through innovative code and creative problem-solving.
+                Full Stack Developer from Calicut, Kerala. I build modern web applications using 
+                React.js, TypeScript, Node.js, and Next.js. I specialize in creating fast, responsive 
+                applications with clean architecture and seamless user experiences—from initial 
+                concept through deployment and beyond.
               <br /> <br />
-              Beyond coding, I channel my creativity as a skilled video editor and content creator, crafting engaging visual narratives that make information accessible and compelling. My multidisciplinary approach allows me to blend technical expertise with storytelling, delivering experiences that resonate with audiences across digital platforms.
+             I'm also a video editor who loves creating trending Instagram Reels. Using CapCut, 
+             I edit raw footage into engaging content with smooth transitions, eye-catching effects, 
+             and perfect audio sync. I know what makes people stop scrolling—and how to deliver it.
             </p>
           </div>
           

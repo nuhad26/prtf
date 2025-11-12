@@ -4,7 +4,7 @@ import * as motion from 'motion/react-client'
 const overlayStyle = {
   position: 'fixed',
   inset: 0,
-  backgroundColor: '#030631',
+  backgroundColor: 'var(--color-bg-primary)',
   display: 'grid',
   placeItems: 'center',
   zIndex: 9999
@@ -13,7 +13,7 @@ const overlayStyle = {
 const circleStyle = {
   width: 120,
   height: 120,
-  background: 'linear-gradient(135deg, #7929bb, #5078b8)',
+  background: 'linear-gradient(135deg, var(--color-accent), var(--color-accent-strong))',
   borderRadius: '50%'
 }
 
@@ -87,12 +87,12 @@ const Loader = ({ onDone }) => {
           initial={{ opacity: 0, y: 8 }}
           animate={phase === 'intro' ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
           transition={{ duration: phase === 'intro' ? 0.6 : 0.6, ease: [0.65, 0, 0.35, 1] }}
-          style={{ color: '#b9c8d3', fontSize: 20, fontWeight: 600, letterSpacing: 0.5, marginTop: 35 }}
+          style={{ color: 'var(--color-text-secondary)', fontSize: 20, fontWeight: 600, letterSpacing: 0.5, marginTop: 35 }}
         >
           Loading{' '}
           <span
             style={{
-              background: 'linear-gradient(135deg, #7929bb, #5078b8)',
+              background: 'linear-gradient(90deg, #3282B8 0%, #64FFDA 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
