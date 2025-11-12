@@ -16,9 +16,14 @@ const Navbar = () => {
   const [menu, setMenu] = React.useState("home");
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const navRef = React.useRef(null)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleOverlayClick = () => {
+    setIsOpen(false)
   }
 
   const handleMenuClick = (menuItem) => {
@@ -46,28 +51,73 @@ const Navbar = () => {
     }
   }, [isOpen])
 
-  // Scroll spy to highlight section in view
+  useEffect(() => {
+    if (!isOpen) return
+
+    const handleOutsidePointer = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsidePointer)
+    document.addEventListener('touchstart', handleOutsidePointer, { passive: true })
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsidePointer)
+      document.removeEventListener('touchstart', handleOutsidePointer, { passive: true })
+    }
+  }, [isOpen])
+
+  // Scroll spy to highlight section closest to viewport center
   useEffect(() => {
     const sectionIds = ['home', 'about', 'experience', 'services', 'features', 'contact']
     const sections = sectionIds
       .map((id) => document.getElementById(id))
-      .filter(Boolean)
+      .filter((el) => el)
 
     if (sections.length === 0) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
-        if (visible[0]?.target?.id) {
-          setMenu(visible[0].target.id)
+    let rafId = null
+
+    const updateActiveSection = () => {
+      rafId = null
+      const viewportCenter = window.innerHeight / 2
+      let closestId = sections[0]?.id ?? null
+      let minDistance = Number.POSITIVE_INFINITY
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        if (rect.height <= 0) return
+        const sectionCenter = rect.top + rect.height / 2
+        const distance = Math.abs(sectionCenter - viewportCenter)
+        if (distance < minDistance) {
+          minDistance = distance
+          closestId = section.id
         }
-      },
-      { rootMargin: '-40% 0px -50% 0px', threshold: [0.1, 0.25, 0.5, 0.75] }
-    )
-    sections.forEach((sec) => observer.observe(sec))
-    return () => observer.disconnect()
+      })
+
+      if (closestId) {
+        setMenu((current) => (current === closestId ? current : closestId))
+      }
+    }
+
+    const requestUpdate = () => {
+      if (rafId !== null) return
+      rafId = window.requestAnimationFrame(updateActiveSection)
+    }
+
+    requestUpdate()
+    window.addEventListener('scroll', requestUpdate, { passive: true })
+    window.addEventListener('resize', requestUpdate)
+
+    return () => {
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId)
+      }
+      window.removeEventListener('scroll', requestUpdate)
+      window.removeEventListener('resize', requestUpdate)
+    }
   }, [])
 
   return (
@@ -96,11 +146,11 @@ const Navbar = () => {
             <p onClick={()=>setMenu("services")}>Services</p>
           </LinkPreview>
         </li>
-        <li className={menu === 'features' ? 'active' : ''}>
+        {/* <li className={menu === 'features' ? 'active' : ''}>
           <LinkPreview href='#features' title='Featured Work' description='Highlights and projects' image={featuresPreview}>
             <p onClick={()=>setMenu("features")}>Features</p>
           </LinkPreview>
-        </li>
+        </li> */}
         <li className={menu === 'contact' ? 'active' : ''}>
           <LinkPreview href='#contact' title='Contact' description='Get in touch' image={contactPreview}>
             <p onClick={()=>setMenu("contact")}>Contact</p>
@@ -110,6 +160,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <motion.nav
+        ref={navRef}
         className={`nav-menu-mobile${isOpen ? ' open' : ''}`}
         initial={false}
         animate={isOpen ? "open" : "closed"}
@@ -119,6 +170,7 @@ const Navbar = () => {
         <motion.div 
           className='nav-menu-background' 
           variants={sidebarVariants} 
+          onClick={handleOverlayClick}
         />
         <Navigation handleMenuClick={handleMenuClick} menu={menu} isOpen={isOpen} />
         <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
@@ -136,11 +188,11 @@ const Navbar = () => {
 const navVariants = {
   open: {
     opacity: 1,
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.04, delayChildren: 0.05 },
   },
   closed: {
     opacity: 0,
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    transition: { staggerChildren: 0.04, staggerDirection: -1 },
   },
 }
 
@@ -185,14 +237,14 @@ const Navigation = ({ handleMenuClick, menu, isOpen }) => (
       handleMenuClick={handleMenuClick}
       isActive={menu === "services"}
     />
-    <MenuItem 
+    {/* <MenuItem 
       i={4} 
       href="#features" 
       label="Features" 
       menuItem="features" 
       handleMenuClick={handleMenuClick}
       isActive={menu === "features"}
-    />
+    /> */}
     <MenuItem 
       i={5} 
       href="#contact" 
@@ -209,19 +261,21 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000, velocity: -100 },
+      y: { stiffness: 900, velocity: -150 },
+      duration: 0.18,
     },
   },
   closed: {
-    y: 50,
+    y: 18,
     opacity: 0,
     transition: {
-      y: { stiffness: 1000 },
+      y: { stiffness: 900 },
+      duration: 0.16,
     },
   },
 }
 
-const colors = ["#7929bb", "#5078b8", "#3c0867", "#764ba2", "#274980", "#2e7d6b"]
+const colors = ["#64ffda", "#52e6c7", "#45d7b8", "#3bc8aa", "#32b195", "#2a9c84"]
 
 const MenuItem = ({ i, href, label, menuItem, handleMenuClick, isActive }) => {
   return (
@@ -240,7 +294,7 @@ const MenuItem = ({ i, href, label, menuItem, handleMenuClick, isActive }) => {
         role="menuitem"
         aria-current={isActive ? 'page' : undefined}
       >
-        <span style={{ color: isActive ? colors[i] : '#b9c8d3' }}>{label}</span>
+        <span style={{ color: isActive ? colors[i] : 'var(--color-text-secondary)' }}>{label}</span>
       </AnchorLink>
     </motion.li>
   )
@@ -273,7 +327,7 @@ const Path = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="#b9c8d3"
+    stroke="var(--color-text-primary)"
     strokeLinecap="round"
     {...props}
   />

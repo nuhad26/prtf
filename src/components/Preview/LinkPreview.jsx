@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import './linkPreview.css'
 
-const LinkPreview = ({ href, offset = 50, children, title, description, image }) => {
+const LinkPreview = ({ href, offset = 50, onClick, children, title, description, image }) => {
   const containerRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
   const [position, setPosition] = useState({ left: 0, top: 0 })
@@ -59,7 +59,7 @@ const LinkPreview = ({ href, offset = 50, children, title, description, image })
       onFocus={open}
       onBlur={close}
     >
-      <AnchorLink className='anchor-link' offset={offset} href={href}>
+      <AnchorLink className='anchor-link' offset={offset} href={href} onClick={onClick}>
         {children}
       </AnchorLink>
 

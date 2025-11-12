@@ -35,13 +35,14 @@ const Hero = () => {
           <img src={profile} alt="Profile" className='hero-image'/>
         </div>
         <h2 className="hero-title">
-          Hello!<br/> I'm <span className="gradient-text">Aman Nuhad,<br/></span>
-          a Full Stack Web Developer.
+       <br/> I'm <span className="gradient-text">Aman Nuhad,</span>
+         <br/>A Full Stack Developer.
         </h2>
         <h3 className="hero-subtitle">
-          A passionate Full Stack Developer from Calicut, Kerala, India, dedicated to crafting 
-          exceptional digital experiences. I specialize in <u className="highlight-text">React, JavaScript/TypeScript, Next.js, and Nest.js </u> 
-          to architect robust, scalable web applications that deliver measurable business value.
+          A passionate Full Stack Developer from Calicut, Kerala, India, dedicated to crafting exceptional digital experiences.
+           I specialize in<u className="highlight-text"> React, JavaScript, TypeScript, Node.js, and Next.js </u>
+          to build modern, scalable applications that deliver exceptional value.
+          
         </h3>
         {/* <div className="hero-description">
           <p className="hero-p1">Beyond coding, I'm a creative content creator and video editor, sharing insights and 
@@ -57,7 +58,7 @@ const Hero = () => {
               </LinkPreview>
             </div> */}
             <div className='hero-resume'>
-              <LinkPreview href='#contact' title='Contact' description='Experience and skills snapshot' image={previewImg}>
+              <LinkPreview href='#contact' title='Contact'>
                 <span>Get in touch</span>
               </LinkPreview>
             </div>

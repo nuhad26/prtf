@@ -5,12 +5,12 @@ import nestLogo from '../../../prtf/public/nest-logo.svg'
 import pythonLogo from '../../../prtf/public/python-logo.png'
 import reactLogo from '../../../prtf/public/logo.svg'
 import jsLogo from '../../../prtf/public/js-logo.png'
-// import htmlLogo from '../../../prtf/public/html-logo.jpg'
-
+import resume from '../../assets/resume.pdf'
 const About = () => {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
   const skillsRef = useRef(null)
+  const resumeLink = resume
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,7 +43,7 @@ const About = () => {
       name: 'HTML & CSS', 
       percentage: 80,
       icon: '🎨',
-      tagline: 'Building beautiful UIs since 2021 🚀',
+      tagline: 'Building beautiful UIs 🚀',
       color: '#e34c26'
     },
     { 
@@ -161,12 +161,32 @@ const About = () => {
         <div className={`about-right ${isVisible ? 'fade-in-right' : ''}`}>
           <div className="about-para">
             <p>
-              A passionate Full Stack Developer based in Calicut, Kerala, specializing in modern web technologies including React.js, JavaScript/TypeScript, Node.js, and a comprehensive suite of cutting-edge libraries and frameworks. I thrive on transforming complex challenges into elegant, scalable solutions through innovative code and creative problem-solving.
+                Full Stack Developer from Calicut, Kerala. I build modern web applications using 
+                React.js, TypeScript, Node.js, and Next.js. I specialize in creating fast, responsive 
+                applications with clean architecture and seamless user experiences—from initial 
+                concept through deployment and beyond.
               <br /> <br />
-              Beyond coding, I channel my creativity as a skilled video editor and content creator, crafting engaging visual narratives that make information accessible and compelling. My multidisciplinary approach allows me to blend technical expertise with storytelling, delivering experiences that resonate with audiences across digital platforms.
+             I'm also a video editor who loves creating trending Instagram Reels. Using CapCut, 
+             I edit raw footage into engaging content with smooth transitions, eye-catching effects, 
+             and perfect audio sync. I know what makes people stop scrolling—and how to deliver it.
             </p>
           </div>
           
+          <div className="about-actions card-links">
+            <a
+              className="card-link"
+              href={resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View or download Aman Nuhad resume"
+            >
+              View Resume
+              <span className="card-link-icon" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </div>
+
           <div className="divider"></div>
         
           <div className="about-skills" ref={skillsRef}>

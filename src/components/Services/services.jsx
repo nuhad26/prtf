@@ -10,18 +10,18 @@ const Services = () => {
       skills: ["React", "HTML/CSS", "JavaScript", "Responsive Design"]
     },
     {
-      id: 2,
-      icon: "🎨",
-      title: "UI/UX Design Support",
-      description: "Assisting in creating intuitive user interfaces and improving user experience. Converting designs to code and ensuring pixel-perfect implementation.",
-      skills: ["Figma", "Prototyping", "Design Systems", "User Research"]
-    },
-    {
       id: 3,
       icon: "🔧",
       title: "Web Maintenance & Updates",
       description: "Providing ongoing support for existing websites including bug fixes, content updates, and performance optimizations. Ensuring websites stay current and functional.",
       skills: ["Debugging", "Testing", "Performance", "Updates"]
+    },
+     {
+      id: 5,
+      icon: "🧩",
+      title: "Backend & API Development",
+      description: "Designing and building secure, scalable APIs and backend services with Node.js and Express. Integrating databases, authentication, and best practices for performance and reliability.",
+      skills: ["Node.js", "Nest.js", "REST APIs", "MySQL"]
     },
     {
       id: 4,
@@ -31,18 +31,22 @@ const Services = () => {
       skills: ["Mobile-First", "CSS Grid/Flexbox", "Media Queries", "Cross-browser"]
     },
     {
-      id: 5,
+      id: 2,
+      icon: "🎬",
+      title: "Social Media Video Editing",
+      description:
+        "Bring your content to life with scroll-stopping Instagram Reels & videos. I specialize in transforming raw footage into trending, interactive content that captures attention and drives engagement.",
+      skills: [
+        "Instagram Reels editing",
+        "CapCut",
+      ]
+    },
+    {
+      id: 6,
       icon: "📚",
       title: "Learning & Collaboration",
       description: "Eager to learn new technologies and contribute to team projects. Bringing fresh perspectives and enthusiasm to development challenges.",
       skills: ["Team Work", "Quick Learning", "Adaptability", "Problem Solving"]
-    },
-    {
-      id: 6,
-      icon: "🧩",
-      title: "Backend & API Development",
-      description: "Designing and building secure, scalable APIs and backend services with Node.js and Express. Integrating databases, authentication, and best practices for performance and reliability.",
-      skills: ["Node.js", "Nest.js", "REST APIs", "MySQL"]
     }
   ];
 

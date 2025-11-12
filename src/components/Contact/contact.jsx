@@ -134,6 +134,9 @@ const contact = () => {
                 </div>
                 <p>Kallai,Calicut,Kerala</p>
               </div>
+              <p className="contact-note">
+          Sorry,  This section is only for visual purposes right now—none of the functions actually work yet. This functionality will be working soon.
+        </p>
             </div>
         </div>
         <form onSubmit={onSubmit} className="contact-right">
