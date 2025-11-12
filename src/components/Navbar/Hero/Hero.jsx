@@ -58,7 +58,7 @@ const Hero = () => {
               </LinkPreview>
             </div> */}
             <div className='hero-resume'>
-              <LinkPreview href='#contact' title='Contact' description='Experience and skills snapshot' image={previewImg}>
+              <LinkPreview href='#contact' title='Contact'>
                 <span>Get in touch</span>
               </LinkPreview>
             </div>

@@ -197,6 +197,10 @@ html {
     animation: fade-in-text 0.8s ease 0.3s both;
 }
 
+.about-actions {
+    justify-content: center;
+}
+
 @keyframes fade-in-text {
     from {
         opacity: 0;

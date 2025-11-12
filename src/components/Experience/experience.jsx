@@ -12,6 +12,12 @@ const Experience = () => {
       description:
         'Worked on full‑stack web apps with React, Next.js and Nest.js. Focus on performant UI, clean APIs, and accessible UX.',
       tags: ['React', 'Next.js', 'Nest.js', 'TypeScript', 'MySQL'],
+      prLinks: [
+       {
+          label: 'BairuhaTech',
+          href: 'https://www.bairuhatech.com',
+        },
+      ]
     },
     {
       id: 2,
@@ -37,6 +43,20 @@ const Experience = () => {
       summary:
         'Built an Employee Management System with React(Next.js) and Nest.js. It allows you to manage your employees, tasks and its time tracking system.',
       tags: ['React', 'Next.js', 'Nest.js', 'MySQL'],
+      prLinks: [
+        {
+          label: 'GitHub Repo(Front)',
+          href: 'https://github.com/nuhad26/timesheet-frontend.git',
+        },
+        {
+          label: 'GitHub Repo(Back)',
+          href: 'https://github.com/nuhad26/timesheet-backend.git',
+        },
+        {
+          label: 'GitHub Repo(API)',
+          href: 'https://github.com/nuhad26/timesheet-api.git',
+        },
+      ],
     },
     {
       id: 3,
@@ -44,6 +64,12 @@ const Experience = () => {
       summary:
         'A list of projects i have worked on. It includes my personal projects and projects i have worked on for the company that includes LMS, ERP, CRM, etc.',
       tags: ['React', 'Next.js', 'Nest.js', 'MySQL', 'Tailwind CSS', 'TypeScript'],
+      prLinks: [
+       {
+          label: 'GitHub Account',
+          href: 'https://github.com/amannuhad',
+        },
+      ],
     },
   ]
 
@@ -97,6 +123,24 @@ const Experience = () => {
                 <span key={i} className="tag">{t}</span>
               ))}
             </div>
+            {xp.prLinks?.length ? (
+              <div className="card-links" aria-label={`${xp.title} GitHub pull requests`}>
+                {xp.prLinks.map((link, idx) => (
+                  <a
+                    key={idx}
+                    className="card-link"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                    <span className="card-link-icon" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                ))}
+              </div>
+            ) : null}
           </div>
         ))}
       </div>
@@ -113,6 +157,24 @@ const Experience = () => {
                   <span key={i} className="tag">{t}</span>
                 ))}
               </div>
+              {p.prLinks?.length ? (
+                <div className="card-links" aria-label={`${p.name} GitHub pull requests`}>
+                  {p.prLinks.map((link, idx) => (
+                    <a
+                      key={idx}
+                      className="card-link"
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.label}
+                      <span className="card-link-icon" aria-hidden="true">
+                        ↗
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              ) : null}
             </div>
           ))}
         </div>

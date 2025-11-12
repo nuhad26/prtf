@@ -135,7 +135,7 @@ const contact = () => {
                 <p>Kallai,Calicut,Kerala</p>
               </div>
               <p className="contact-note">
-          Sorry, but this section is only for visual purposes right now—none of the functions actually work yet. This functionality will be working soon.
+          Sorry,  This section is only for visual purposes right now—none of the functions actually work yet. This functionality will be working soon.
         </p>
             </div>
         </div>

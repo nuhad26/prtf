@@ -10,7 +10,7 @@ const Footer = () => {
           <p className="footer-description">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's connect and explore how we can work together.
           </p>
-          <p className="footer-subtitle">What to include:</p>
+         {/*  <p className="footer-subtitle">What to include:</p>
           <ul className="footer-list">
             <li>Your name and company</li>
             <li>Email address</li>
@@ -18,7 +18,7 @@ const Footer = () => {
           </ul>
           <p className="footer-thanks">
             I'll respond promptly to discuss how we can bring your ideas to life.
-          </p>
+          </p> */}
         </div>
       </div>
 
