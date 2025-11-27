@@ -23,6 +23,9 @@ const StarBackground = () => {
                 this.twinkleSpeed = Math.random() * 0.05 + 0.01;
                 this.vx = 0;
                 this.vy = 0;
+                // Add slight drift for space effect
+                this.driftX = (Math.random() - 0.5) * 0.3;
+                this.driftY = (Math.random() - 0.5) * 0.3;
             }
 
             draw() {
@@ -39,6 +42,27 @@ const StarBackground = () => {
                 // Clamp alpha
                 if (this.alpha < 0.2) this.alpha = 0.2;
                 if (this.alpha > 1) this.alpha = 1;
+
+                // Update base position (drift)
+                this.baseX += this.driftX;
+                this.baseY += this.driftY;
+
+                // Wrap around screen
+                if (this.baseX > canvas.width) {
+                    this.baseX = 0;
+                    this.x -= canvas.width;
+                } else if (this.baseX < 0) {
+                    this.baseX = canvas.width;
+                    this.x += canvas.width;
+                }
+
+                if (this.baseY > canvas.height) {
+                    this.baseY = 0;
+                    this.y -= canvas.height;
+                } else if (this.baseY < 0) {
+                    this.baseY = canvas.height;
+                    this.y += canvas.height;
+                }
 
                 // Repulsion effect
                 let dx = mouse.x - this.x;
@@ -141,7 +165,8 @@ const StarBackground = () => {
                 height: '100%',
                 zIndex: 0,
                 pointerEvents: 'none',
-            }}
+            }
+            }
         />
     );
 };
