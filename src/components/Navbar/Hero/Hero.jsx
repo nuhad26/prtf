@@ -42,8 +42,8 @@ const Hero = () => {
       </h2>
       <h3 className="hero-subtitle">
         A passionate Full Stack Developer from Calicut, Kerala, India, dedicated to crafting exceptional digital experiences.
-        I specialize in<u className="highlight-text"> React, JavaScript, TypeScript, Node.js, and Next.js </u>
-        to build modern, scalable applications that deliver exceptional value.
+        I specialize in<u className="highlight-text"> React, Next.js, NestJS, TypeScript, and MySQL </u>
+        to build scalable SaaS applications and enterprise platforms that deliver exceptional value.
 
       </h3>
       {/* <div className="hero-description">

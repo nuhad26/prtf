@@ -11,14 +11,21 @@
   --shadow-elevated: 0 18px 40px rgba(10, 25, 47, 0.5);
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   min-height: 100vh;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: 'outfit', sans-serif;
+  overflow-x: hidden;
+  padding-top: 86px;
+}
+
+html {
+  overflow-x: hidden;
 }

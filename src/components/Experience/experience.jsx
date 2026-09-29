@@ -6,12 +6,20 @@ const Experience = () => {
 
   const experiences = [
     {
+      id: 0,
+      title: 'Full Stack Developer, Spinach Informatics Pvt. Ltd.',
+      period: 'May 2026 – Aug 2026',
+      description:
+        'Built a SaaS-grade HRMS platform from scratch (employee management, attendance, leave, payroll, RBAC, organization management) using React, Next.js, NestJS, TypeScript and MySQL. Also built a multilingual, responsive medical tourism website with SEO, GEO and AEO best practices.',
+      tags: ['React', 'Next.js', 'NestJS', 'TypeScript', 'MySQL', 'SEO'],
+    },
+    {
       id: 1,
       title: 'Full Stack Developer at BairuhaTech(Intern)',
-      period: '2025 — Present',
+      period: 'Aug 2025 – Mar 2026',
       description:
-        'Worked on full‑stack web apps with React, Next.js and Nest.js. Focus on performant UI, clean APIs, and accessible UX.',
-      tags: ['React', 'Next.js', 'Nest.js', 'TypeScript', 'MySQL'],
+        'Developed and maintained full-stack modules for LMS, ERP and CRM systems. Built responsive UI with Next.js and Tailwind CSS, integrated REST APIs with NestJS, and contributed to a React Native (Expo) mobile app.',
+      tags: ['React', 'Next.js', 'Nest.js', 'TypeScript', 'MySQL', 'Tailwind CSS', 'NestJS', 'React Native'],
       prLinks: [
        {
           label: 'BairuhaTech',
@@ -30,13 +38,22 @@ const Experience = () => {
   ]
 
   const projects = [
-    // {
-    //   id: 1,
-    //   name: 'Portfolio Website',
-    //   summary:
-    //     'A performant, responsive portfolio built with React and modern animations. Focus on scroll‑based interactions and accessibility.',
-    //   tags: ['React', 'Motion', 'Vite'],
-    // },
+    {
+      id: 0,
+      name: 'Enterprise SaaS HRMS Platform',
+      summary:
+        'Full-featured SaaS HRMS built from scratch: payroll, attendance, leave management, employee lifecycle, organization management, reporting, and secure role-based access control.',
+      tags: ['React', 'Next.js', 'NestJS', 'TypeScript', 'MySQL'],
+      isPrivate: true,
+    },
+    {
+      id: 1,
+      name: 'Medical Tourism Website',
+      summary:
+        'Multilingual, SEO-optimized, responsive website for an international medical tourism agency. Built with SEO, GEO and AEO best practices.',
+      tags: ['Next.js', 'Tailwind CSS', 'SEO'],
+      isPrivate: true,
+    },
     {
       id: 2,
       name: 'Employee Management System',
@@ -157,7 +174,11 @@ const Experience = () => {
                   <span key={i} className="tag">{t}</span>
                 ))}
               </div>
-              {p.prLinks?.length ? (
+              {p.isPrivate ? (
+                <div className="card-links">
+                  <span className="tag" style={{ opacity: 0.7, fontStyle: 'italic' }}>🔒 Private Project</span>
+                </div>
+              ) : p.prLinks?.length ? (
                 <div className="card-links" aria-label={`${p.name} GitHub pull requests`}>
                   {p.prLinks.map((link, idx) => (
                     <a
@@ -177,6 +198,17 @@ const Experience = () => {
               ) : null}
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="xp-education-block">
+        <h3 className="projects-title">Education</h3>
+        <div className="xp-card reveal" role="listitem" aria-label="Education">
+          <div className="xp-header">
+            <h3>Bachelor of Computer Science</h3>
+            <span className="xp-period">2022 – 2025</span>
+          </div>
+          <p className="xp-desc">MES Arts &amp; Science College</p>
         </div>
       </div>
     </section>

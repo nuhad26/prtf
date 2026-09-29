@@ -7,7 +7,7 @@ const Services = () => {
       icon: "💻",
       title: "Frontend Development",
       description: "Building responsive and interactive user interfaces using React, HTML, CSS, and JavaScript. Creating modern, user-friendly web applications with clean code and best practices.",
-      skills: ["React", "HTML/CSS", "JavaScript", "Responsive Design"]
+      skills: ["React", "HTML/CSS", "JavaScript", "Responsive Design", "Tailwind CSS", "Authentication"]
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const Services = () => {
       icon: "🧩",
       title: "Backend & API Development",
       description: "Designing and building secure, scalable APIs and backend services with Node.js and Express. Integrating databases, authentication, and best practices for performance and reliability.",
-      skills: ["Node.js", "Nest.js", "REST APIs", "MySQL"]
+      skills: ["Node.js", "Nest.js", "REST APIs", "MySQL", "PostgreSQL", "NestJS", "Authentication", "RBAC"]
     },
     {
       id: 4,
@@ -30,23 +30,20 @@ const Services = () => {
       description: "Creating mobile-friendly websites that work seamlessly across all devices. Ensuring optimal user experience on desktop, tablet, and mobile platforms.",
       skills: ["Mobile-First", "CSS Grid/Flexbox", "Media Queries", "Cross-browser"]
     },
-    {
-      id: 2,
-      icon: "🎬",
-      title: "Social Media Video Editing",
-      description:
-        "Bring your content to life with scroll-stopping Instagram Reels & videos. I specialize in transforming raw footage into trending, interactive content that captures attention and drives engagement.",
-      skills: [
-        "Instagram Reels editing",
-        "CapCut",
-      ]
-    },
+
     {
       id: 6,
       icon: "📚",
       title: "Learning & Collaboration",
       description: "Eager to learn new technologies and contribute to team projects. Bringing fresh perspectives and enthusiasm to development challenges.",
       skills: ["Team Work", "Quick Learning", "Adaptability", "Problem Solving"]
+    },
+    {
+      id: 7,
+      icon: "🔍",
+      title: "SEO-Optimized Websites",
+      description: "Building multilingual, fast, search-friendly websites that rank well on Google and other search engines, optimized for SEO, GEO, and AEO best practices.",
+      skills: ["SEO", "GEO", "AEO", "Multilingual"]
     }
   ];
 

@@ -5,12 +5,12 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import * as motion from 'motion/react-client'
 import LinkPreview from '../Preview/LinkPreview'
 import previewImg from '../../assets/profile.jpg'
-import aboutPreview from '../../../prtf/public/about-me.jpg'
-import contactPreview from '../../../prtf/public/contact.jpg'
-import servicesPreview from '../../../prtf/public/services.jpg'
-import featuresPreview from '../../../prtf/public/features.jpg'
-import homePreview from '../../../prtf/public/home.png'
-import experiencePreview from '../../../prtf/public/experience.avif'
+const aboutPreview = '/about-me.jpg'
+const contactPreview = '/contact.jpg'
+const servicesPreview = '/services.jpg'
+const featuresPreview = '/features.jpg'
+const homePreview = '/home.png'
+const experiencePreview = '/experience.avif'
 
 const Navbar = () => {
   const [menu, setMenu] = React.useState("home");
@@ -121,65 +121,67 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className={`navbar${isScrolled ? ' is-scrolled' : ''}`}>
-      <div className="nav-logo"><h1>Portfolio</h1></div>
-      
-      {/* Desktop Menu */}
-      <ul className='nav-menu-desktop'>
-        <li className={menu === 'home' ? 'active' : ''}>
-          <AnchorLink className='anchor-link' offset={50} href='#home'>
-            <p onClick={()=>setMenu("home")}>Home</p>
-          </AnchorLink>
-        </li>
-        <li className={menu === 'about' ? 'active' : ''}>
-          <LinkPreview href='#about' title='About Me' description='Background, skills and story' image={aboutPreview}>
-            <p onClick={()=>setMenu("about")}>About Me</p>
-          </LinkPreview>
-        </li>
-        <li className={menu === 'experience' ? 'active' : ''}>
-          <LinkPreview href='#experience' title='Experience' description='Roles and selected projects' image={experiencePreview}>
-            <p onClick={()=>setMenu("experience")}>Experience</p>
-          </LinkPreview>
-        </li>
-        <li className={menu === 'services' ? 'active' : ''}>
-          <LinkPreview href='#services' title='Services' description='What I can do for you' image={servicesPreview}>
-            <p onClick={()=>setMenu("services")}>Services</p>
-          </LinkPreview>
-        </li>
-        {/* <li className={menu === 'features' ? 'active' : ''}>
-          <LinkPreview href='#features' title='Featured Work' description='Highlights and projects' image={featuresPreview}>
-            <p onClick={()=>setMenu("features")}>Features</p>
-          </LinkPreview>
-        </li> */}
-        <li className={menu === 'contact' ? 'active' : ''}>
-          <LinkPreview href='#contact' title='Contact' description='Get in touch' image={contactPreview}>
-            <p onClick={()=>setMenu("contact")}>Contact</p>
-          </LinkPreview>
-        </li>        
-      </ul>
+    <div className="navbar-sticky-wrapper">
+      <div className={`navbar${isScrolled ? ' is-scrolled' : ''}`}>
+        <div className="nav-logo"><h1>Portfolio</h1></div>
+        
+        {/* Desktop Menu */}
+        <ul className='nav-menu-desktop'>
+          <li className={menu === 'home' ? 'active' : ''}>
+            <AnchorLink className='anchor-link' offset={50} href='#home'>
+              <p onClick={()=>setMenu("home")}>Home</p>
+            </AnchorLink>
+          </li>
+          <li className={menu === 'about' ? 'active' : ''}>
+            <LinkPreview href='#about' title='About Me' description='Background, skills and story' image={aboutPreview}>
+              <p onClick={()=>setMenu("about")}>About Me</p>
+            </LinkPreview>
+          </li>
+          <li className={menu === 'experience' ? 'active' : ''}>
+            <LinkPreview href='#experience' title='Experience' description='Roles and selected projects' image={experiencePreview}>
+              <p onClick={()=>setMenu("experience")}>Experience</p>
+            </LinkPreview>
+          </li>
+          <li className={menu === 'services' ? 'active' : ''}>
+            <LinkPreview href='#services' title='Services' description='What I can do for you' image={servicesPreview}>
+              <p onClick={()=>setMenu("services")}>Services</p>
+            </LinkPreview>
+          </li>
+          {/* <li className={menu === 'features' ? 'active' : ''}>
+            <LinkPreview href='#features' title='Featured Work' description='Highlights and projects' image={featuresPreview}>
+              <p onClick={()=>setMenu("features")}>Features</p>
+            </LinkPreview>
+          </li> */}
+          <li className={menu === 'contact' ? 'active' : ''}>
+            <LinkPreview href='#contact' title='Contact' description='Get in touch' image={contactPreview}>
+              <p onClick={()=>setMenu("contact")}>Contact</p>
+            </LinkPreview>
+          </li>        
+        </ul>
 
-      {/* Mobile Menu */}
-      <motion.nav
-        ref={navRef}
-        className={`nav-menu-mobile${isOpen ? ' open' : ''}`}
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        role="navigation"
-        aria-label="Mobile navigation"
-      >
-        <motion.div 
-          className='nav-menu-background' 
-          variants={sidebarVariants} 
-          onClick={handleOverlayClick}
-        />
-        <Navigation handleMenuClick={handleMenuClick} menu={menu} isOpen={isOpen} />
-        <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
-      </motion.nav>
+        {/* Mobile Menu */}
+        <motion.nav
+          ref={navRef}
+          className={`nav-menu-mobile${isOpen ? ' open' : ''}`}
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
+          <motion.div 
+            className='nav-menu-background' 
+            variants={sidebarVariants} 
+            onClick={handleOverlayClick}
+          />
+          <Navigation handleMenuClick={handleMenuClick} menu={menu} isOpen={isOpen} />
+          <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+        </motion.nav>
 
-      <div>
-        {/* <LinkPreview href='#contact' title='Contact' description='Email, socials and form' image={contactPreview}>
-          Contact Me
-        </LinkPreview> */}
+        <div>
+          {/* <LinkPreview href='#contact' title='Contact' description='Email, socials and form' image={contactPreview}>
+            Contact Me
+          </LinkPreview> */}
+        </div>
       </div>
     </div>
   )
